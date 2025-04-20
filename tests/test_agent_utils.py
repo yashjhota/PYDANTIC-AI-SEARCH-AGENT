@@ -26,3 +26,13 @@ def test_get_search_results_runs_and_returns_string():
 
 # You could add more tests here, e.g., testing edge cases or specific expected keywords
 # but this is a basic "does it run" test.
+
+def test_case_2():
+    query = "What is the largest mammal?"
+    try:
+        result = get_search_results(query)
+        assert isinstance(result, str) and "blue whale" in result.lower()
+    except Exception as e:
+        pytest.fail(f"test_case_2 raised an exception: {e}")
+
+
