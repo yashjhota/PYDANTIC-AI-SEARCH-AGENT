@@ -39,4 +39,4 @@ jobs:
       # - name: Deploy to Streamlit Cloud
       #   run: |
       #     curl -sSL https://get.streamlit.io | bash
-      #     streamlit deploy --token ${{ secrets.STREAMLIT_TOKEN }} --app-path app.py
+      #     streamlit deploy --token {{ secrets.STREAMLIT_TOKEN }} --app-path app.py
