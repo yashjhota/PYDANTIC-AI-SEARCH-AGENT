@@ -39,21 +39,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # 4. Lint with flake8 (Optional)
-      #    Requires flake8 in requirements.txt
-      # - name: Lint with flake8
-      #   run: |
-      #     # stop the build if there are Python syntax errors or undefined names
-      #     flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-      #     # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-      #     flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-
-      # 5. Run tests with pytest (Optional)
-      #    Requires pytest in requirements.txt
-      #    Assumes your tests are discoverable by pytest (e.g., in a 'tests/' folder)
-      #    Crucially, it injects the TAVILY_API_KEY from GitHub Secrets
+      # 4 testing 
       - name: Test with pytest
         env:
-          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }} # Inject the secret as an env variable
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          GROQ_API_KEY:  ${{ secrets.GROQ_API_KEY  }} # Inject the secret as an env variable
         run: |
           pytest
