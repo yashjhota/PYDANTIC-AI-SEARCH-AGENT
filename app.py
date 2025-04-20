@@ -10,9 +10,9 @@ query = st.text_input("Enter your query:", placeholder="e.g. What are the latest
 
 if st.button("Search"):
     if query.strip():
-        with st.spinner("Searching..."):
+        with st.spinner("Searching your Query ......"):
             response = get_search_results(query)
-        st.success("✅ Here's what I found:")
+        st.success("✅ Here's what I have found for you dude:")
         st.write(response)
     else:
         st.warning("⚠️ Please enter a query before searching.")
